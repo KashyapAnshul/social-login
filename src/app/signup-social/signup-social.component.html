@@ -1,0 +1,37 @@
+<div class="conatiner" style="margin: auto;width:40%">
+  <div *ngIf="!user">
+    <div class="row">
+      <div class="col-6">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+          <div class="card-header">Facebook</div>
+          <div class="card-body">
+            <h5 class="card-title">Login with Facebook</h5>
+            <button class="btn bg-light " (click)="signInWithFB();"> Signup</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">Google</div>
+          <div class="card-body">
+            <h5 class="card-title">Login with Google</h5>
+            <button class="btn bg-primary " (click)="signInWithGoogle();"> Signup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="user" class="conatiner">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{user.photoUrl}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">User Profile</h5>
+        <p class="card-text">{{user.name}}</p>
+        <p class="card-text">{{user.email}}</p>
+        <button class="btn btn-primary" (click)="signOut();">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+</div>
